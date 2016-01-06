@@ -12,6 +12,7 @@ import com.yunkouan.biz.operator.dao.OperatorDao;
 import com.yunkouan.biz.operator.entity.Operator;
 import com.yunkouan.biz.operator.service.OperatorService;
 import com.yunkouan.biz.operator.vo.OperatorVO;
+import com.yunkouan.common.BeanMapper;
 
 @Transactional
 @Service(value="operatorService")
@@ -29,7 +30,7 @@ public class OperatorServiceImpl implements OperatorService {
 
 	@Override
 	public void modifyOperator(OperatorVO operatorVO) {
-		
+
 	}
 
 	@Override
@@ -40,7 +41,14 @@ public class OperatorServiceImpl implements OperatorService {
 	@Override
 	public List<OperatorVO> getOperatorVOs() {
 		List<Operator> operators = operatorDao.getOperators();
-		
-		return null;
+		List<OperatorVO> operatorvos = BeanMapper.mapList(operators, OperatorVO.class);
+		return operatorvos;
+	}
+
+	@Override
+	public OperatorVO getOperator(String loginName) {
+		Operator  operator = operatorDao.findOperator(loginName);
+		OperatorVO operatorvo = BeanMapper.map(operator, OperatorVO.class);
+		return operatorvo;
 	}
 }

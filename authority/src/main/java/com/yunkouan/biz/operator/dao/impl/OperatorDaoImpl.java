@@ -35,4 +35,13 @@ public class OperatorDaoImpl implements OperatorDao {
 	public void removeOperator(Operator operator){
 		entityManager.remove(operator);
 	}
+
+	@Override
+	public Operator findOperator(String loginName) {
+		String jpql = "SELECT o FROM Operator o WHERE o.loginName =:loginName";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("loginName", loginName); 
+		Operator operator = (Operator) query.getSingleResult();
+		return operator;
+	}
 }

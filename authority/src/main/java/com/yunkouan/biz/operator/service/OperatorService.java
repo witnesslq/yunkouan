@@ -12,4 +12,6 @@ public interface OperatorService {
 	void removeOperator(OperatorVO operatorVO);
 	
 	List<OperatorVO> getOperatorVOs(); 
+	
+	OperatorVO getOperator(String loginName);
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import com.yunkouan.biz.operator.entity.Operator;
 
 public interface OperatorDao {
+	public Operator findOperator(String loginName);
+	
 	/**
 	 * 添加操作员
 	 * @param operator
