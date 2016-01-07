@@ -1,0 +1,16 @@
+html,body { font:14px "微软雅黑"; color:#666666; background:#fff; overflow: hidden; margin:0; padding:0; height: 100%;}
+h1, h2, h3, h4, h5, h6, p { margin:0; padding:0; box-sizing: border-box;}
+div, ul, ol, dl, dt, dd, li, input { list-style-type:none; margin:0; padding:0; box-sizing: border-box;}
+a { color:#999999; text-decoration:none; }
+a:hover { color:#CC0000; }
+img { border:0; }
+
+.verify{width: 50%; margin:150px auto;}
+
+.verify ul li{margin-top: 15px;}
+.verify input{ width: 100%; position: relative; height: 38px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; padding: 0 10px; font-family: "微软雅黑"; }
+.verify input:focus{border-color: #66afe9; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6); outline: 0 none;}
+
+.popover{box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); background-color: #fff; padding: 10px; border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 6px; max-width: 276px; position: absolute; right: 0; top: -54px; z-index: 150;}
+.arrow{position: absolute; width: 0; height: 0; line-height: 0px; border-top:10px solid #fff; border-left: 10px solid transparent; border-right: 10px solid transparent; bottom: -10px; left: 50%;}
+.popover-content{background: url(../images/error.png) no-repeat scroll 0 3px; background-size: 15px; padding-left: 25px; font-size: 14px; font-family:"微软雅黑"; color: #CC0000;}
