@@ -25,6 +25,7 @@ public class OperatorController {
 	@RequestMapping(value="/operatorView")
 	public String operatorView(){
 		System.out.println("view");
+		System.out.println("view2");
 		return "/system/operator/operator";
 	}
 	
