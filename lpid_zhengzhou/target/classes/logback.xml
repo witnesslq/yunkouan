@@ -1,0 +1,150 @@
+<configuration debug="true" scan="true">
+	<property resource="system.properties" />
+	
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+   	<resetJUL>true</resetJUL>
+  </contextListener>	
+    
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender"> <!-- encoders are assigned by default the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/logs/lpid_debug.log</File>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">   
+	      <level>DEBUG</level>   
+	      <onMatch>ACCEPT</onMatch>   
+	      <onMismatch>DENY</onMismatch>   
+		</filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+             <FileNamePattern>${LOG_HOME}/logs/lpid_debug.%i.log</FileNamePattern>    
+             <MinIndex>1</MinIndex>    
+              <MaxIndex>5</MaxIndex>    
+        </rollingPolicy>  
+       <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+         <MaxFileSize>5MB</MaxFileSize>    
+       </triggeringPolicy>  
+       <layout class="ch.qos.logback.classic.PatternLayout">  
+        <Pattern>%date [%thread] %-5level %logger{80} - %msg%n</Pattern>    
+       </layout>  
+    </appender>
+	 
+	<appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <File>${LOG_HOME}/logs/lpid_info.log</File>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">   
+	      <level>INFO</level>   
+	      <onMatch>ACCEPT</onMatch>   
+	      <onMismatch>DENY</onMismatch>   
+		</filter>
+       <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+         <FileNamePattern>${LOG_HOME}/logs/lpid_info.%i.log</FileNamePattern>    
+         <MinIndex>1</MinIndex>    
+         <MaxIndex>5</MaxIndex>    
+       </rollingPolicy>  
+       <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+         <MaxFileSize>5MB</MaxFileSize>    
+       </triggeringPolicy>  
+       <layout class="ch.qos.logback.classic.PatternLayout">  
+        <Pattern>%date [%thread] %-5level %logger{80} - %msg%n</Pattern>    
+       </layout>  
+    </appender>
+
+	<appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <File>${LOG_HOME}/logs/lpid_error.log</File>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">   
+	      <level>ERROR</level>   
+	      <onMatch>ACCEPT</onMatch>   
+	      <onMismatch>DENY</onMismatch>   
+		</filter>
+       <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+         <FileNamePattern>${LOG_HOME}/logs/lpid_error.%i.log</FileNamePattern>    
+         <MinIndex>1</MinIndex>    
+         <MaxIndex>5</MaxIndex>    
+       </rollingPolicy>  
+       <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+         <MaxFileSize>5MB</MaxFileSize>    
+       </triggeringPolicy>  
+       <layout class="ch.qos.logback.classic.PatternLayout">  
+        <Pattern>%date [%thread] %-5level %logger{80} - %msg%n</Pattern>    
+       </layout>  
+    </appender>
+    
+    <appender name="framework_debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <File>${LOG_HOME}/logs/framework_debug.log</File>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">   
+	      <level>DEBUG</level>   
+	      <onMatch>ACCEPT</onMatch>   
+	      <onMismatch>DENY</onMismatch>   
+		</filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+             <FileNamePattern>${LOG_HOME}/logs/framework_debug.%i.log</FileNamePattern>    
+             <MinIndex>1</MinIndex>    
+              <MaxIndex>5</MaxIndex>    
+        </rollingPolicy>  
+       <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+         <MaxFileSize>5MB</MaxFileSize>    
+       </triggeringPolicy>  
+       <layout class="ch.qos.logback.classic.PatternLayout">  
+        <Pattern>%date [%thread] %-5level %logger{80} - %msg%n</Pattern>    
+       </layout>  
+    </appender>
+    
+    <appender name="framework_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <File>${LOG_HOME}/logs/framework_info.log</File>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">   
+	      <level>INFO</level>   
+	      <onMatch>ACCEPT</onMatch>   
+	      <onMismatch>DENY</onMismatch>   
+		</filter>
+       <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+         <FileNamePattern>${LOG_HOME}/logs/framework_info.%i.log</FileNamePattern>    
+         <MinIndex>1</MinIndex>    
+         <MaxIndex>5</MaxIndex>    
+       </rollingPolicy>  
+       <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+         <MaxFileSize>5MB</MaxFileSize>    
+       </triggeringPolicy>  
+       <layout class="ch.qos.logback.classic.PatternLayout">  
+        <Pattern>%date [%thread] %-5level %logger{80} - %msg%n</Pattern>    
+       </layout>  
+    </appender>
+    
+    <appender name="framework_error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <File>${LOG_HOME}/logs/framework_error.log</File>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">   
+	      <level>ERROR</level>   
+	      <onMatch>ACCEPT</onMatch>   
+	      <onMismatch>DENY</onMismatch>   
+		</filter>
+       <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+         <FileNamePattern>${LOG_HOME}/logs/framework_error.%i.log</FileNamePattern>    
+         <MinIndex>1</MinIndex>    
+         <MaxIndex>5</MaxIndex>    
+       </rollingPolicy>  
+       <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">  
+         <MaxFileSize>5MB</MaxFileSize>    
+       </triggeringPolicy>  
+       <layout class="ch.qos.logback.classic.PatternLayout">  
+        <Pattern>%date [%thread] %-5level %logger{80} - %msg%n</Pattern>    
+       </layout>  
+    </appender>
+    
+    <!-- 正式上线时使用，只在本logger的appender-ref文件中打印log，不会在别的文件中再重复打印。-->
+    <!-- 
+	<logger name="com.yunkouan" level="debug" additivity="false">
+    -->
+	<logger name="com.yunkouan" level="debug">
+	    <appender-ref ref="debug" />
+	    <appender-ref ref="info" />
+	    <appender-ref ref="error" />
+	</logger>
+	<root level="info">
+		<appender-ref ref="console" />
+		<appender-ref ref="framework_debug" />
+		<appender-ref ref="framework_info" />
+		<appender-ref ref="framework_error" />
+	</root>
+</configuration>
