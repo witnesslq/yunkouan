@@ -58,9 +58,13 @@ public class Constant {
      */
     public static final String NO_DEAL_DIRECTORY =  "xrayPhotos/nodeal/";
     /**
-     * 云图引擎图片存放路径
+     * 云图引擎图片存放路径(原图)
      */
-    public static final String CLOUD_DIRECTORY =  "xrayPhotos/cloud/";
+    public static final String CLOUD_DIRECTORY_NODEAL =  "xrayPhotos/cloud/nodeal/";
+    /**
+     * 调用算法后的图片
+     */
+    public static final String CLOUD_DIRECTORY_DEAL =  "xrayPhotos/cloud/deal/";
     /**
      * 可见光图片存放路径
      */

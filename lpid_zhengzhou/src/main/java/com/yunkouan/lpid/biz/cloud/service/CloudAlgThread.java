@@ -67,12 +67,9 @@ public class CloudAlgThread implements Runnable{
 		}
 		if(resultData == null || resultData.getResult() == null || resultData.getResult().size()==0) return ;
 		List<ImageCoordData> imageCoordDatas = resultData.getResult();
-//		if(imageCoordDatas== null || imageCoordDatas.size() ==0 ) return ;
 		ImageCoordData imageCoordData = imageCoordDatas.get(0);
 		int currentSuspect = resultData.getSuspect();// 当前疑似度值
-//		if(imageCoordData== null || imageCoordData.getCoords().size() ==0 ) return ;
 		imageBo.setObjecttype(imageCoordData.getObjecttype());
-//		imageBo.setSuspect(currentSuspect);
 		imageBo.setCoords(imageCoordData.getCoords());
 		List<CoordModel> coords = imageCoordData.getCoords();
 		if(coords != null && coords.size() > 0) {
@@ -114,7 +111,7 @@ public class CloudAlgThread implements Runnable{
 		drawRunnable.img.coords.put(null, crds);
 
 		File srcFile = new File(absolutePath);
-		File destFile = new File(IMAGEPATH + Constant.CLOUD_DIRECTORY + DateTimeUtil.getCurrentDate(DateTimeUtil.YMD_DATE_FORMAT), imageName);
+		File destFile = new File(IMAGEPATH + Constant.CLOUD_DIRECTORY_DEAL + DateTimeUtil.getCurrentDate(DateTimeUtil.YMD_DATE_FORMAT), imageName);
 		
 		try {
 			org.apache.commons.io.FileUtils.copyFile(srcFile, destFile);

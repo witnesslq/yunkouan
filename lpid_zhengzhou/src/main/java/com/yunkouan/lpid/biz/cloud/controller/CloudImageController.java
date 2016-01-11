@@ -40,7 +40,7 @@ import com.yunkouan.lpid.commons.util.ResourceBundleUtil;
 public class CloudImageController {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	// 路径1 X光图片存放根目录(E:/svn_new/lpid/lpid_zhengzhou/image/)
-	private String rootPath = ResourceBundleUtil.getSystemString("IMAGEPATH") + Constant.CLOUD_DIRECTORY;
+	private String rootPath = ResourceBundleUtil.getSystemString("IMAGEPATH") + Constant.CLOUD_DIRECTORY_NODEAL;
 	// 路径2
 	private String datePath; // 图片存放三级目录(根据保存时的当前日期生成)(/20150724)
 	private String xrayImageName; // X光图片名称(1.jpg)
@@ -152,7 +152,7 @@ public class CloudImageController {
 		String absolutePath = images.get(0).getAbsolutePath();
 		String imageName = images.get(0).getName();
 		this.imageBo.setAbsolutePath(absolutePath);
-		this.imageBo.setRelativePath(Constant.CLOUD_DIRECTORY + datePath + "/" + imageName);
+		this.imageBo.setRelativePath(Constant.CLOUD_DIRECTORY_NODEAL + datePath + "/" + imageName);
 		this.imageBo.setImagename(imageName);
 		TwoTuple<Integer, Integer> sizeTuple = FileUtils.calcImageWidthAndHeight(images.get(0));
 		if(sizeTuple != null) this.imageBo.setWidth(sizeTuple.first);
