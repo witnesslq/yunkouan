@@ -27,6 +27,7 @@ public class OperatorController {
 		System.out.println("view");
 		System.out.println("view2");
 		System.out.println("home change...");
+		System.out.println("company change...");
 		return "/system/operator/operator";
 	}
 	
