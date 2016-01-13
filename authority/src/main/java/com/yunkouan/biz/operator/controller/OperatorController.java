@@ -26,6 +26,7 @@ public class OperatorController {
 	public String operatorView(){
 		System.out.println("view");
 		System.out.println("view2");
+		System.out.println("home change...");
 		return "/system/operator/operator";
 	}
 	
