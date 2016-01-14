@@ -1,4 +1,0 @@
-spring
-springmvc
-hibernate
-JPA
